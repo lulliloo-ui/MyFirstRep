@@ -1,12 +1,19 @@
 #include<iostream>
+bool isPyth(unsigned a, unsigned b, unsigned c){
+  bool p = (a*a == (b*b + c*c));
+  p = p || (b*b == (a*a + c*c));
+  p = p || (c*c == (b*b + a*a));
+  return p;
+}
 int main()
 {
   using u_t = unsigned;
-  u_t a = 0;
+  u_t a = 0, b = 0, c = 0;
   size_t count = 0;
-  std::cin >> a;
   while(std::cin >> a){
-    count++;
+    count += isPyth(a,b,c) ? 1 : 0;
+    c = b;
+    b = a;
   }
   if(std::sin.eof()){
     std::cout << count;
