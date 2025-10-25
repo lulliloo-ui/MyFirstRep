@@ -6,12 +6,21 @@ bool isPyth(unsigned a, unsigned b, unsigned c){
   return p;
 }
 int main()
+unsigned max() {
+  return std::numberic_limits<unsigned>::max();
+}
 {
   using u_t = unsigned;
   u_t a = 0, b = 0, c = 0;
   std::cin >> c >> b;
   size_t count = 0;
   while(std::cin >> a){
+    if(max() / a < a || max() / b < b || max() / c < c) {
+      return 2;
+    }
+    if(max() - b*b < c*c || max() - a*a < c*c || max() - b*b < a*a){
+      return 2;
+    }
     count += isPyth(a,b,c) ? 1 : 0;
     c = b;
     b = a;
