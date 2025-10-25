@@ -16,7 +16,7 @@ int main()
     c = b;
     b = a;
   }
-  if(std::sin.eof()){
+  if(std::cin.eof()){
     std::cout << count;
     std::cout << "\n";
   }
