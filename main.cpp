@@ -1,15 +1,16 @@
 #include<iostream>
+#include<limits>
 bool isPyth(unsigned a, unsigned b, unsigned c){
   bool p = (a*a == (b*b + c*c));
   p = p || (b*b == (a*a + c*c));
   p = p || (c*c == (b*b + a*a));
   return p;
 }
-int main()
+
 unsigned max() {
-  return std::numberic_limits<unsigned>::max();
+  return std::numeric_limits<unsigned>::max();
 }
-{
+int main() {
   using u_t = unsigned;
   u_t a = 0, b = 0, c = 0;
   std::cin >> c >> b;
@@ -33,4 +34,5 @@ unsigned max() {
     std::cerr << "Error\n";
     return 1;
   }
+  return 0;
 }
